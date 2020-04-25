@@ -54,7 +54,7 @@ export default class Main extends Component {
                         style={{borderRadius: 999, height: this.state.avatar ? (this.state.avatar.height):(100), aspectRatio: 1}}
                         source={this.props.AppStore.getAvatar ? ({uri: this.props.AppStore.getAvatar.url}):(require('../../assets/non-profile.png'))} 
                     />
-                    {!this.state.name && <Text style={{padding: 20}}>Please log in to explore more movies</Text>}
+                    {!this.props.AppStore.getName && <Text style={{padding: 20}}>Please log in to explore more movies</Text>}
                     <CustomButton icon="film" onPress={() => this.getMoviesList()} title="Show Movies List" color="darkblue" textColor="white" />
                 </View>
                 
