@@ -5,7 +5,7 @@ import Main from '../../Screens/Main/Main';
 import MovieScreen from '../../Screens/MovieScreen/MovieScreen';
 import Favourite from '../../Screens/Favourite/Favourite';
 import {createAppContainer} from 'react-navigation';
-import Header from '../../Components/Header/Header';
+import HeaderButton from '../../Components/HeaderButton/HeaderButton';
 
 export default createAppContainer(createStackNavigator(
   {
@@ -22,10 +22,7 @@ export default createAppContainer(createStackNavigator(
   {
     initialRouteName: Routes.Screens.MAIN.routeName,
     defaultNavigationOptions: {
-      // header: (props) => <Header {...props}/>,
-      // headerStyle: {
-      //     height: 'auto'
-      // }
+      headerRight: () => <HeaderButton />
     },
   },
 ));
