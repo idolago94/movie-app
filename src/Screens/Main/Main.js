@@ -10,6 +10,7 @@ import { inject, observer } from "mobx-react";
 import { AppStore } from '../../mobx';
 import {create} from 'mobx-persist';
 import {AsyncStorage} from 'react-native';
+import { window_height } from '../../utils/Style';
 
 const hydrate = create({
     storage: AsyncStorage,
@@ -51,7 +52,7 @@ export default class Main extends Component {
                 <View style={{alignItems: 'center'}}>
                     <Text style={{fontSize: 20, padding: 20}}>Welcome {this.props.AppStore.getName || 'Stranger'}!</Text>
                     <Image 
-                        style={{borderRadius: 999, height: this.state.avatar ? (this.state.avatar.height):(100), aspectRatio: 1}}
+                        style={{borderRadius: 999, height: this.state.avatar ? (this.state.avatar.height):(window_height*0.1), aspectRatio: 1}}
                         source={this.props.AppStore.getAvatar ? ({uri: this.props.AppStore.getAvatar.url}):(require('../../assets/non-profile.png'))} 
                     />
                     {!this.props.AppStore.getName && <Text style={{padding: 20}}>Please log in to explore more movies</Text>}
