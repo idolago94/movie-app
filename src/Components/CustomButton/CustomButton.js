@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import Badge from './Badge';
 
 export default function CustomButton(props) {
 
   return (
     <TouchableHighlight style={[props.style, styles.button, {backgroundColor: props.color || 'transparent'}]} onPress={() => props.onPress()}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
-        {props.icon && <Icon style={{padding: 5}} name={props.icon} size={30} color={props.textColor || props.iconColor || 'white'} />}
+        {props.icon && <View>
+          {props.iconBadge && <Badge title={props.iconBadge} />}
+          <Icon solid={props.iconSolid} style={{padding: 5}} name={props.icon} size={props.iconSize || 30} color={props.textColor || props.iconColor || 'white'} />
+        </View>}
         {props.title && <Text style={[styles.text, {color: props.textColor || 'black'}]}>{props.title}</Text>}
       </View>
     </TouchableHighlight>
