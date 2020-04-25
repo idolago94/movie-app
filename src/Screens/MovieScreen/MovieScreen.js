@@ -3,6 +3,7 @@ import {StyleSheet, View, Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import CustomButton from '../../Components/CustomButton/CustomButton';
 import { inject, observer } from "mobx-react";
+import { window_width, window_height } from '../../utils/Style';
 
 @inject('AppStore')
 @observer
@@ -25,7 +26,7 @@ export default class MovieScreen extends Component {
         return (
             <View style={{alignItems: 'center'}}>
                 <Image 
-                    style={{width: 300, height: 500}}
+                    style={{width: 300, height: window_height*0.5}}
                     source={{uri: `https://image.tmdb.org/t/p/w500${movieData.poster_path}`}}
                 />
                 <View style={{padding: 10}}>
