@@ -24,15 +24,17 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import StackNavigator from './src/Navigators/Stack/StackNavigator';
+import { Provider, inject, observer } from "mobx-react";
+import * as Stores from './src/mobx';
 
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={{flex: 1}}>
-        <View style={{flex: 1}}>
+        <Provider {...Stores}>
           <StackNavigator />
-        </View>
+        </Provider>
       </SafeAreaView>
     </>
   );
