@@ -8,7 +8,7 @@ export default function CustomButton(props) {
     <TouchableHighlight style={[props.style, styles.button, {backgroundColor: props.color || 'transparent'}]} onPress={() => props.onPress()}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         {props.icon && <Icon style={{padding: 5}} name={props.icon} size={30} color={props.textColor || props.iconColor || 'white'} />}
-        {props.title && <Text style={[styles.text, {color: props.textColor || 'white'}]}>{props.title}</Text>}
+        {props.title && <Text style={[styles.text, {color: props.textColor || 'black'}]}>{props.title}</Text>}
       </View>
     </TouchableHighlight>
   )
