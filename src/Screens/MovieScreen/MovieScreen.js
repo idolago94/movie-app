@@ -26,7 +26,7 @@ export default class MovieScreen extends Component {
         return (
             <View style={{alignItems: 'center'}}>
                 <Image 
-                    style={{width: 300, height: window_height*0.5}}
+                    style={{width: window_width*0.7, height: window_height*0.5}}
                     source={{uri: `https://image.tmdb.org/t/p/w500${movieData.poster_path}`}}
                 />
                 <View style={{padding: 10}}>
